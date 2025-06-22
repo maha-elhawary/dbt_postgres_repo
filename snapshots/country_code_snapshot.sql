@@ -12,12 +12,9 @@
   )
 }}
 SELECT *
-  --country_name,
-  --country_code,
-  --updated_at
 FROM
   --dbt_db.schema_db.country_codes
-  {{ ref('country_codes') }} --table name in db schema(not sure if this is correct)
+  {{ ref('country_codes') }} -- Reference to the country_codes model
   {% endsnapshot %}
 -- This snapshot captures the country codes and their names from the 'country_codes' model.
 -- It uses a check strategy to track changes in the 'country_name' and 'country_code
